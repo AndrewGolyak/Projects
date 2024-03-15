@@ -1,0 +1,509 @@
+//Підключення шрифтів
+@import url(https://fonts.googleapis.com/css?family=Rubik:300,regular,500,600,700,800,900,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+@import url(https://fonts.googleapis.com/css?family=Merriweather:300,300italic,regular,italic,700,700italic,900,900italic);
+
+//Обнулення CSS
+@import"nullstyle.scss";
+
+//Стилі за замовчуванням
+body{
+	font-family: "Rubik";
+	font-weight: 400;
+	font-size: 0.875rem;
+	color:  #646d70;
+}
+.wrapper{
+	min-height: 100%;
+	overflow: clip;
+	display: flex;
+	flex-direction: column;
+}
+
+//Налаштування адаптиву
+[class*="__conteiner" ] {
+	max-width: 52.5rem; //Обмежуючиий + відступи
+	padding-left: 0.9375rem;
+	padding-right: 0.9375rem;
+	margin: 0 auto;
+
+}
+//Модуль/шаблон
+.title{
+	font-family: "Merriweather";
+	font-weight: 900;
+	font-size: 1.875rem;
+	color: #fff;
+	line-height: 130%;
+
+}
+.title--dark{
+	color: #222f33;
+
+}
+@media (max-width: 47.9988em){
+	.title{
+		font-size: 1.5rem;
+	}
+}
+.text{
+	line-height: 185%;
+}
+.text p:not(:last-child){
+	margin-bottom: 0.9375rem;
+	
+}
+
+
+//Основні стилі
+.page{
+	flex: 1 1 auto;
+	&__main {	
+
+	}
+	&__materials {
+	}
+}
+.header {
+	position: fixed;
+	width: 100%;
+	left: 0;
+	top: 0;
+	z-index: 50;
+	&__conteiner {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		min-height: 6.5625rem;
+		padding-top: 0.3125rem;
+		padding-bottom: 0.3125rem;
+		gap: 1.25rem;
+	}
+	&__logo {
+		overflow: hidden;
+	}
+	&__logo img {
+		width: 8.4375rem;
+	}
+	
+	&__body {
+		display: flex;
+		align-items: center;
+		column-gap: 2.6875rem;
+	}
+	&__menu {
+
+	}
+
+	&__bottom {
+		padding: 0.625rem 1.3125rem;
+		border-radius: 0.25rem;
+		background-color: #fff;
+		transition: all 0.5s;
+	}
+	&__bottom:hover{
+		background-color: #222f33;
+		color: #fff;
+	}
+	&__bottom:active{
+		background-color: #7c4701;
+		color: #fff;
+
+	}
+	@media(max-width: 39.0625em){
+		&__conteiner{
+			min-height: 4.375rem;
+		}
+		&__body{
+			column-gap: 1.25rem;
+		}
+		&__logo{
+			width: 2.0625rem;
+			flex: 0 0 2.0625rem;
+		}
+		&__bottom{
+			padding: 0.625rem 0.9375rem; 
+		}
+	}
+}
+.header.scroll{
+	background-color: rgba(0, 0, 0, 0.4);
+}
+
+.menu {
+
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		column-gap: 2.5rem;
+		row-gap: 0.5rem;
+		font-size: 0.75rem;
+		color:#fff;
+		font-weight: 500;
+	}
+
+	&__item {
+	}
+
+	&__link {
+	
+	}
+	&__link:hover {
+		text-decoration:underline;
+		color: #646d70;
+	
+	}
+	@media(max-width: 39.0625em){
+		&__list{
+			column-gap: 1.25rem;
+			font-size: 14px;
+		}
+	}
+}
+
+.main-section {
+	min-height: 100vh;
+	position: relative;
+	display: flex;
+
+	&__conteiner {
+		position: relative;
+		z-index: 2;
+		min-height: 100%;
+		display: grid;
+		gap: 1.25rem;
+		grid-template-columns: 54.320988% 1fr;
+		flex: 1 1 auto;
+		align-items: center;
+		padding-top: 5.625rem;
+		padding-bottom: 1.875rem;
+	}
+	@media (max-width: 43.75em) {
+		&__conteiner {
+			grid-template-columns: auto;
+			align-content: center;
+		}
+	}
+
+	&__label {
+		font-size: 1rem;
+		font-weight: 500;
+		color: #fff;
+	}
+	&__label:not(:last-child){
+		margin-bottom: 12px;
+	}
+
+	&__video-link {
+		display: flex;
+		align-items: center;
+		gap: 0.625rem;
+		color: #fff;
+		font-size: 0.75rem;
+		font-weight: 500;
+		
+	}
+	@media (min-width: 43.75em){
+		&__video-link{
+			justify-self: center;
+		}
+	}
+
+	&__video-link::before{
+		content: "";
+		background: url(../img/main/Play.svg) left no-repeat;
+		width: 2rem;
+		height: 2rem;
+		flex: 0 0 2rem;
+		border-radius: 50%;
+	}
+
+	&__img {
+		border-bottom: 0.0625rem solid #fff;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		background-color: #000;
+		& img{
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			object-fit: cover;
+		}	
+	}
+	@media (max-width: 43.75em){
+		& img {
+			opacity: 0.6;
+		}
+	}
+}
+//Секція матеріали
+.swiper {
+	overflow: hidden;
+}
+.swiper-initialized{
+	touch-action: pan-y;
+}
+.swiper-wrapper {
+	display: flex;
+	box-sizing: content-box;
+}
+.swiper-slide {
+	flex-shrink: 0;
+}
+
+.materials {
+	position: relative;
+	z-index: 2;
+	
+
+	&__conteiner {
+		position: relative;
+		padding-bottom: 1.25rem;
+		z-index: 2;
+		display: grid;
+		grid-template-columns: 50% minmax(17.5rem, 20.3125rem);
+		justify-content: space-between;
+		align-items: start;
+		gap: 1.25rem;
+		min-width: 0;
+	}
+
+	&__content {
+		padding-top: 1.5625rem;
+		display: grid;
+		gap: 0.8125rem;
+		justify-items: start;
+	}
+
+	&__title {
+	}
+
+	&__text {
+	}
+
+	&__more {
+		border: 1px solid#646d70;
+		border-radius: 0.25rem;
+		padding: 0.625rem 0.875rem;
+		font-size: 0.75rem;
+		font-weight: 500;
+	}
+
+	&__slider {
+		transform: translate(0, -20.765027%); /* 76/366 */
+	}
+	@media (min-width: 47.9988em){
+		&::before{
+			content: '';
+			background-color: #fff;
+			position: absolute;
+			left: 0;
+			top: 0;
+			height: 2.3125rem;
+			transform: translate(0px, -100%);
+			width: 61.7%;
+		}
+		&::after{
+			content: '';
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			height: 8.75rem;
+			background-color: #222f33;
+			width: 38.3%; /* 383/1000 */
+		}
+	}
+	@media (max-width: 47.9988em) {
+		&__conteiner{
+			grid-template-columns: auto;
+		}
+		&__slider {
+			transform: translate(0, 0); 
+		}
+	}
+}
+
+.slider-materials {
+	position: relative;
+
+	&__wrapper {
+	}
+
+	&__slide {
+		aspect-ratio: 325 / 366;
+		position: relative;
+	}
+	&__slide img{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		object-fit: cover;
+	}
+	&__pagination {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		padding: 0 0.3125rem 1rem 0.3125rem;
+	}
+}
+.slider-materials__pagination .swiper-pagination-bullet{
+	flex: 0 0 0.5rem;
+	height: 0.5rem;
+	background-color: #fff;
+	border-radius: 50%;
+	cursor: pointer;
+	opacity: 0.4;
+	transition: opacity 0.3s;
+}
+.slider-materials__pagination .swiper-pagination-bullet-active{
+	opacity: 1;
+}
+
+//Сeкція іновації
+
+.inovate {
+
+	background-color: #222f33;
+	padding: 70px 0px 80px 0px;
+
+	&__title:not(:last-child) {
+		
+		margin-bottom: 0.5rem;
+	}
+
+	&__text {
+		color: #fff;
+		columns: 2 15.625rem;
+		gap: 2.6875rem;
+	}
+	@media (max-width: 47.9988em){
+		padding: 1.875rem 0 ;
+	}
+}
+
+.info {
+	padding-top: 5.3125rem;
+	padding-bottom: 5.3125rem;
+
+	&__conteiner {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		column-gap: 4.6875rem;
+		row-gap: 1.875rem;
+	}
+
+	&__image img{
+		max-width: 100%;
+	}
+
+	&__content {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		column-gap: 3.75rem;
+		row-gap:37px;
+	}
+
+	&__title{
+		font-family: "Merriweather";
+		font-weight: 900;
+		font-size: 1.125rem;
+		color: #222f33;
+	}
+	&__title:not(:last-child){
+		margin-bottom: 0.25rem;
+	}
+
+	&__text {
+		font-size: 0.75rem;
+	}
+
+	@media (max-width:52.5em) {
+		&__content {
+			column-gap: 1.25rem;
+		}
+		&__conteiner {
+			column-gap: 1.5625rem;
+		}
+	}
+	@media (max-width:47.9988em) {
+		&__conteiner {
+			grid-template-columns: auto;
+			padding-top: 2.5rem;
+			padding-bottom: 2.5rem;
+	}
+		&__content{
+			order: 1;
+		}
+		&__image {
+			order: 2;
+		}
+	}
+
+}
+.footer {
+	background-color: #222f33;
+	color: #fff;
+	padding-top: 2.0625rem;
+	padding-bottom: 2.0625rem;
+	
+
+	&__conteiner {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		align-items: center;
+		
+	}
+
+	&__mail {
+		font-size: 0.75rem;
+		font-weight: 500;
+		opacity: 0.7;
+	}
+	&__mail:hover{
+		text-decoration: underline;
+	}
+
+	&__logo {
+		justify-self: center;
+	}
+	@media (max-width:37.5em){
+		&__conteiner{
+			grid-template-columns: auto;
+			justify-content: center;
+			text-align: center;
+			gap: 0.9375rem;
+		}
+	}
+
+}
+.menu-footer {
+	display: flex;
+	gap: 1.875rem;
+	align-items: center;
+	justify-self: end;
+
+	&__item {
+	}
+
+	&__link {
+		font-size: 0.75rem;
+		font-weight: 500;
+		opacity: 0.7;
+	}
+	&__link:hover{
+		text-decoration: underline;
+	}
+}
